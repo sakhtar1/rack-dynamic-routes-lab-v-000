@@ -8,9 +8,8 @@ class Application
 
     if req.path.match(/items/)
       item_name = req.path.split("/items/").last
-      if @@items.each do |item|
+      if item = @@items.find{|i| i.name == item_name}
           resp.write "#{item.price}\n"
-        end
       else
         resp.status = 400
         resp.write "Item not found"
