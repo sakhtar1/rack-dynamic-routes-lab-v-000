@@ -10,7 +10,7 @@ class Application
       @@items.each do |item|
       resp.write "#{item.price}\n"
       end
-    elsif req.path.match(/itesm/)
+    elsif req.path.match(/items/)
       if @@items.empty?
         resp.write "Item not found"
         resp.status = 400
