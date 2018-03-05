@@ -12,11 +12,11 @@ class Application
       end
     elsif req.path.match(/items/)
       @@items.each do |item|
-      if item.empty?
-        resp.write "Item not found"
-        resp.status = 400
+        if item.empty?
+          resp.write "Item not found"
+          resp.status = 400
+        end
       end
-    end
     else
       resp.write "Route not found"
       resp.status = 404
