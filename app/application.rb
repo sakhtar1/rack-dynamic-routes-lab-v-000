@@ -12,8 +12,7 @@ class Application
       end
     elsif req.path.match(/items/)
       @@items.each do |item|
-        if item.empty?
-          resp.write "Item not found"
+          resp.write "#{item} not found"
           resp.status = 400
         end
       end
